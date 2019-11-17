@@ -1,0 +1,83 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// for generate pallet use  http://mcg.mbitson.com/#!?mcgpalette0=%23000000
+$primary: (50: #e2e6fc,
+  100: #b6c0f7,
+  200: #8696f2,
+  300: #556ced,
+  400: #304de9,
+  500: #0c2de5,
+  600: #0a28e2,
+  700: #0822de,
+  800: #061cda,
+  900: #0311d3,
+  A100: #fbfbff,
+  A200: #c8caff,
+  A400: #9598ff,
+  A700: #7b80ff,
+  contrast: (50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ));
+$secondary: (50: #fcede2,
+  100: #f7d3b6,
+  200: #f2b586,
+  300: #ed9755,
+  400: #e98130,
+  500: #e56b0c,
+  600: #e2630a,
+  700: #de5808,
+  800: #da4e06,
+  900: #d33c03,
+  A100: #fffcfb,
+  A200: #ffd4c8,
+  A400: #ffac95,
+  A700: #ff987b,
+  contrast: (50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ));
+$custom-app-primary: mat-palette($primary);
+$custom-app-accent: mat-palette($secondary);
+
+// The warn palette is optional (defaults to red).
+$custom-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$custom-app-theme: mat-light-theme($custom-app-primary, $custom-app-accent, $custom-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($custom-app-theme);
